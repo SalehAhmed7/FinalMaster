@@ -26,6 +26,10 @@ public class EmployeeServices {
 		return this.repo.findById(id).get();
 	}
 	
+	public Employee getEmployee(String subject) {
+		return this.repo.findBySubject(subject).get();
+	}
+	
 	public Employee createEmployee(Employee employee) {
 		return this.repo.save(employee);
 	}
