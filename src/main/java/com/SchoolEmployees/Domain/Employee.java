@@ -1,5 +1,7 @@
 package com.SchoolEmployees.Domain;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +26,7 @@ public class Employee {
 	
 	
 	public Employee(){
-		super();
+		
 	}
 	
 	public Employee(Long id, String firstName, String lastName, String email, String subject, String phoneNumber) {
@@ -39,6 +41,25 @@ public class Employee {
 		
 	}
 
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(email, firstName, id, lastName, phoneNumber, subject);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName)
+				&& Objects.equals(id, other.id) && Objects.equals(lastName, other.lastName)
+				&& Objects.equals(phoneNumber, other.phoneNumber) && Objects.equals(subject, other.subject);
+	}
 
 	public Long getId() {
 		return id;
