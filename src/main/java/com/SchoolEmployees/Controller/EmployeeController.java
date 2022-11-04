@@ -49,6 +49,8 @@ public List<Employee> getAllEmployeeBy(@PathVariable("firstName")String firstNam
 public List<Employee> getAllEmployeeById(@PathVariable("lastName")String lastName) {
     return this.service.getEmployee(lastName);
 	}
+	
+	
 	@GetMapping("/getBySubject/{subject}")
 	
 	public List<Employee> getAllEmployeeBySubject(@PathVariable("subject")String subject) {
@@ -66,73 +68,12 @@ public List<Employee> getAllEmployeeById(@PathVariable("lastName")String lastNam
 		 service.deleteEmployee(id);
 	}
 	
+	
+	
 
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 		
 	}
