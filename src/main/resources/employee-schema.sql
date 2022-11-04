@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS employee CASCADE;
+CREATE TABLE employee 
+(
+	id BIGINT PRIMARY KEY AUTO_INCREMENT, 
+	first_name VARCHAR(255), 
+	last_name VARCHAR(255),
+	email VARCHAR(255) UNIQUE,
+	phone_number VARCHAR(255) UNIQUE, 
+	subject VARCHAR(255) 
+);	

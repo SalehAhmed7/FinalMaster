@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class NotFoundException extends RuntimeException {
 	
 	public NotFoundException(String message) {
-		// TODO Auto-generated constructor stub
 		super(message);
 	}
 
