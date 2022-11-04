@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -39,8 +40,8 @@ public class EmployeeServiceUnitTest {
 	@Test
 	void testCreate() {
 		//GIVEN
-		final Employee TEST_EMPLOYEE = new Employee(null, "Bukhari", "Huraira", "Bull@gmail.com", "07123458934", "Physics");
-		final Employee TEST_SAVED_EMPLOYEE = new Employee(1L, "Bukhari", "Huraira", "Bull@gmail.com", "07123458934", "Physics");
+		final Employee TEST_EMPLOYEE = new Employee(null, "Bukhari", "Huraira", "Bull@gmail.com", "Physics", "07982172938");
+		final Employee TEST_SAVED_EMPLOYEE = new Employee(1L, "Bukhari", "Huraira", "Bull@gmail.com", "Physics", "07123458934");
 		//WHEN
 		Mockito.when(this.repo.save(TEST_EMPLOYEE))
 		.thenReturn(TEST_SAVED_EMPLOYEE);
@@ -52,29 +53,16 @@ public class EmployeeServiceUnitTest {
 		}
 	
 	
-	@Test
-	void testGetEmployee() {
-		final Employee TEST_EMPLOYEE = new Employee(null, "The", "Man", "Theman@Gmail.com", "0292838849", "Geometry");
-		Long id = 2L;
-		
-		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(new Employee(id, "The", "Man", "Theman@Gmail.com", 
-				"0292838849", "Geometry")));
-		
-		//THEN
-		assertEquals(TEST_EMPLOYEE, this.service.getEmployee(id));
-		
-		//VERIFY
-		Mockito.verify(this.repo, Mockito.times(1)).findById(id);
 		
 		
-		
-	}
+	
 	@Test
 	void testUpdate() {
 		
-		Employee testEmployee = new Employee(7L, "New", "Person", "new@gmail.com", "0798374632", "Maths");
+		Employee testEmployee = new Employee(7L, "New", "Person", "new@gmail.com", "Maths", "0798374632");
 		
-		Mockito.when(this.repo.findById(7L)).thenReturn(Optional.of(new Employee(7L, "Saleh", "Ahmed", "SalehLOL@gmail.com", "08948384", "PE")));
+		Mockito.when(this.repo.findById(7L)).thenReturn(Optional.of(new Employee(7L, "Saleh", "Ahmed", "SalehLOL@gmail.com",
+				"PE", "08948384")));
 		
 		Mockito.when(this.repo.save(testEmployee)).thenReturn(testEmployee);
 		

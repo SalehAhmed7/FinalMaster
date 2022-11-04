@@ -29,7 +29,7 @@ public class EmployeeController {
 		
 	}
 	@PostMapping("/create")
-	//@ResponseStatus(HttpStatus.CREATED)
+	@ResponseStatus(HttpStatus.CREATED)
 	public Employee createEmployee(@RequestBody Employee newEmployee) {
 		return this.service.createEmployee(newEmployee);
 	}
